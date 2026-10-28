@@ -19,5 +19,16 @@ public class UsuarioTest {
     }
     //Nesse formato eu mostro que eu quero que essa exceção saia
 
+    @Test
+    public void deveCriarUsuarioUsandoFabricaUsuaio(){
+        FabricaDeUsuario fabrica = new FabricaDeUsuario();
+        Usuario usuario = fabrica.comNomeCpfNascimento("Emily", "654.123.897-88",
+                LocalDate.parse("2000-10-01"));
+        Assertions.assertEquals("Emily", usuario.getNome());
+
+        usuario = fabrica.incluiEndereco("12345-999",40, "apto 201");
+        Assertions.assertEquals("apto 201", usuario.getEndereco().getComplemento());
+    }
+
 
 }
