@@ -1,6 +1,5 @@
-package br.com.alura.codechella;
+package br.com.alura.codechella.application;
 
-import br.com.alura.codechella.application.ValidacaoException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
