@@ -1,12 +1,8 @@
-package br.com.alura.codechella.application.Evento;
+package br.com.alura.codechella.application.evento;
 
 import br.com.alura.codechella.domain.evento.Categoria;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-
-import java.time.LocalDateTime;
 
 public record DadosCadastroEvento(
         @NotNull(message = "A categoria do evento é obrigatória!")

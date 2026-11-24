@@ -1,8 +1,7 @@
 package br.com.alura.codechella.infra.venda;
 
-
-import br.com.alura.codechella.application.ingresso.Ingresso;
-import br.com.alura.codechella.domain.entities.usuario.Usuario;
+import br.com.alura.codechella.infra.ingresso.Ingresso;
+import br.com.alura.codechella.infra.persistence.UsuarioEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -26,7 +25,7 @@ public class Venda {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private UsuarioEntity usuario;
 
     @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Ingresso> ingressos = new ArrayList<>();
@@ -38,11 +37,12 @@ public class Venda {
     public void setId(Long id) {
         this.id = id;
     }
-    public Usuario getUsuario() {
+
+    public UsuarioEntity getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(UsuarioEntity usuario) {
         this.usuario = usuario;
     }
 

@@ -1,6 +1,6 @@
 package br.com.alura.codechella.infra.evento;
 
-import br.com.alura.codechella.Categoria;
+import br.com.alura.codechella.domain.evento.Categoria;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;

@@ -1,6 +1,6 @@
 package br.com.alura.codechella.infra.ingresso;
 
-import br.com.alura.codechella.application.Evento.Evento;
+import br.com.alura.codechella.infra.evento.Evento;
 import br.com.alura.codechella.domain.ingresso.Definicao;
 import br.com.alura.codechella.domain.ingresso.Setor;
 import com.fasterxml.jackson.annotation.JsonIgnore;
