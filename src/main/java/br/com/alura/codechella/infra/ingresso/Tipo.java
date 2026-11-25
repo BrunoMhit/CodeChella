@@ -1,6 +1,6 @@
 package br.com.alura.codechella.infra.ingresso;
 
-import br.com.alura.codechella.infra.evento.Evento;
+import br.com.alura.codechella.infra.evento.EventoEntity;
 import br.com.alura.codechella.domain.ingresso.Definicao;
 import br.com.alura.codechella.domain.ingresso.Setor;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,7 +18,7 @@ public class Tipo {
 
     @ManyToOne
     @JsonIgnore
-    private Evento evento;
+    private EventoEntity evento;
     @Enumerated(EnumType.STRING)
     private Setor setor;
 
@@ -29,7 +29,7 @@ public class Tipo {
 
     @OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
-    private List<Ingresso> ingressos = new ArrayList<>();
+    private List<IngressoEntity> ingressos = new ArrayList<>();
     private Tipo(){}
 
     public Tipo(Setor setor, Definicao definicao, Double valor, int totalDisponivel) {
@@ -47,11 +47,11 @@ public class Tipo {
         this.id = id;
     }
 
-    public Evento getEvento() {
+    public EventoEntity getEvento() {
         return evento;
     }
 
-    public void setEvento(Evento evento) {
+    public void setEvento(EventoEntity evento) {
         this.evento = evento;
     }
 
@@ -87,11 +87,11 @@ public class Tipo {
         this.totalDisponivel = totalDisponivel;
     }
 
-    public List<Ingresso> getIngressos() {
+    public List<IngressoEntity> getIngressos() {
         return ingressos;
     }
 
-    public void setIngressos(List<Ingresso> ingressos) {
+    public void setIngressos(List<IngressoEntity> ingressos) {
         ingressos.forEach(i -> i.setTipo(this));
         this.ingressos = ingressos;
     }

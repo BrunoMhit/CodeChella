@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ingressos")
-public class Ingresso {
+public class IngressoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,9 +17,9 @@ public class Ingresso {
     @JsonIgnore
     private Venda venda;
 
-    public Ingresso() {}
+    public IngressoEntity() {}
 
-    public Ingresso(int codigo, Tipo tipo) {
+    public IngressoEntity(int codigo, Tipo tipo) {
         this.codigo = codigo;
         this.tipo = tipo;
     }

@@ -1,32 +1,24 @@
 package br.com.alura.codechella.infra.evento;
 
 import br.com.alura.codechella.domain.evento.Categoria;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "eventos")
-public class Evento {
+public class EventoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
 
+    public EventoEntity(){}
 //    private String descricao;
 //    @Embedded
 //    private Endereco endereco;
@@ -34,7 +26,7 @@ public class Evento {
 //    @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    private List<Tipo> tipoIngressos = new ArrayList<>();
 //
-//    public Evento() {}
+
 //
 //    public Evento(DadosCadastroEvento dados) {
 //        this.categoria = dados.categoria();
