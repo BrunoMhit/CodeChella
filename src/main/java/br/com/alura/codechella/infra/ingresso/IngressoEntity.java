@@ -1,6 +1,6 @@
 package br.com.alura.codechella.infra.ingresso;
 
-import br.com.alura.codechella.infra.venda.Venda;
+import br.com.alura.codechella.infra.venda.VendaEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -12,14 +12,14 @@ public class IngressoEntity {
     private Long id;
     private int codigo;
     @ManyToOne
-    private Tipo tipo;
+    private TipoIngressoEntity tipo;
     @ManyToOne
     @JsonIgnore
-    private Venda venda;
+    private VendaEntity venda;
 
     public IngressoEntity() {}
 
-    public IngressoEntity(int codigo, Tipo tipo) {
+    public IngressoEntity(int codigo, TipoIngressoEntity tipo) {
         this.codigo = codigo;
         this.tipo = tipo;
     }
@@ -40,19 +40,19 @@ public class IngressoEntity {
         this.codigo = codigo;
     }
 
-    public Tipo getTipo() {
+    public TipoIngressoEntity getTipo() {
         return tipo;
     }
 
-    public void setTipo(Tipo tipo) {
+    public void setTipo(TipoIngressoEntity tipo) {
         this.tipo = tipo;
     }
 
-    public Venda getVenda() {
+    public VendaEntity getVenda() {
         return venda;
     }
 
-    public void setVenda(Venda venda) {
+    public void setVenda(VendaEntity venda) {
         this.venda = venda;
     }
 }

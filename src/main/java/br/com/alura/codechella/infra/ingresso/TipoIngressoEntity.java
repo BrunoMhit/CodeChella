@@ -11,7 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tipo_ingresso")
-public class Tipo {
+public class TipoIngressoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,9 +30,9 @@ public class Tipo {
     @OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
     private List<IngressoEntity> ingressos = new ArrayList<>();
-    private Tipo(){}
+    private TipoIngressoEntity(){}
 
-    public Tipo(Setor setor, Definicao definicao, Double valor, int totalDisponivel) {
+    public TipoIngressoEntity(Setor setor, Definicao definicao, Double valor, int totalDisponivel) {
         this.setor = setor;
         this.definicao = definicao;
         this.valor = valor;
