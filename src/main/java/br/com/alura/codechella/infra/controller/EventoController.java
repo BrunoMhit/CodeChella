@@ -1,5 +1,6 @@
-package br.com.alura.codechella.application.evento;
+package br.com.alura.codechella.infra.controller;
 
+import br.com.alura.codechella.application.evento.EventoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,7 @@ public class EventoController {
     @Autowired
     private EventoService service;
 
-//    @PostMapping
+//    @PostMapping\
 //    @Transactional
 //    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroEvento dadosCadastro, UriComponentsBuilder uriBuilder) {
 //        DadosEvento dadosEvento = service.cadastrarEvento(dadosCadastro);

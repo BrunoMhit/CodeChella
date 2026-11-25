@@ -1,13 +1,8 @@
-package br.com.alura.codechella.application.venda;
+package br.com.alura.codechella.infra.controller;
 
-import jakarta.transaction.Transactional;
-import jakarta.validation.Valid;
+import br.com.alura.codechella.application.venda.VendaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("vendas")
