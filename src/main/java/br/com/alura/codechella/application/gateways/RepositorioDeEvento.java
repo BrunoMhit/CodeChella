@@ -1,8 +1,8 @@
-package br.com.alura.codechella.application.evento;
+package br.com.alura.codechella.application.gateways;
 
 import br.com.alura.codechella.domain.evento.Endereco;
 import br.com.alura.codechella.domain.evento.Evento;
 
-public interface RpositorioDeEvento {
+public interface RepositorioDeEvento {
     Evento buscarEventoPorCidade(Endereco cep);
 }

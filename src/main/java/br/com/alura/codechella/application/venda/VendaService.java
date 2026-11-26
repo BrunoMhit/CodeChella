@@ -1,13 +1,6 @@
 package br.com.alura.codechella.application.venda;
 
-
-import br.com.alura.codechella.infra.persistence.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class VendaService {
