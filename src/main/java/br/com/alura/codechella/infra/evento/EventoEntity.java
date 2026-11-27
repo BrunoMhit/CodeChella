@@ -1,9 +1,12 @@
 package br.com.alura.codechella.infra.evento;
 
 import br.com.alura.codechella.domain.evento.Categoria;
+import br.com.alura.codechella.infra.ingresso.TipoIngressoEntity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -21,14 +24,12 @@ public class EventoEntity {
     private String descricao;
 
     @Embedded
-    private Endereco endereco;
+    private EnderecoEmbeddable endereco;
     private LocalDateTime data;
 
     public EventoEntity(){}
-    // Relacionamento com os tipos de ingresso.
-    // Será implementado posteriormente.
-    //    @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
-    //    private List<TipoIngressoEntity> tipoIngressos = new ArrayList<>();
+    @OneToMany(mappedBy = "evento")
+    private List<TipoIngressoEntity> tipoIngressos = new ArrayList<>();
 
 
 
@@ -64,11 +65,11 @@ public class EventoEntity {
         this.descricao = descricao;
     }
 
-    public Endereco getEndereco() {
+    public EnderecoEmbeddable getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(EnderecoEmbeddable endereco) {
         this.endereco = endereco;
     }
 
@@ -78,5 +79,14 @@ public class EventoEntity {
 
     public void setData(LocalDateTime data) {
         this.data = data;
+    }
+
+    public List<TipoIngressoEntity> getTipoIngressos(){
+        return tipoIngressos;
+    }
+
+    public void setTipoIngressos(List<TipoIngressoEntity> tipoIngressos){
+        tipoIngressos.forEach(tipo -> tipo.setEvento(this));
+        this.tipoIngressos = tipoIngressos;
     }
 }

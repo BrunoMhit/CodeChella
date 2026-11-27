@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.Objects;
 
 public class Evento {
     private UUID uuid;
@@ -22,6 +23,15 @@ public class Evento {
         this.endereco = endereco;
 
         gerarIdentificador();
+    }
+
+    public Evento(UUID uuid, Categoria categoria, String descricao, LocalDateTime dateTime, Endereco endereco){
+        this.uuid = Objects.requireNonNull(uuid);
+        this.categoria = categoria;
+        this.descricao = descricao;
+        this.dateTime = dateTime;
+        this.endereco = endereco;
+
     }
 
     private void gerarIdentificador() {

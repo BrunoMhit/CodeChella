@@ -3,14 +3,14 @@ package br.com.alura.codechella.infra.evento;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class Endereco {
+public class EnderecoEmbeddable {
     private String cep;
     private Integer numero;
     private String complemento;
 
-    public Endereco() {}
+    public EnderecoEmbeddable() {}
 
-    public Endereco(String cep, Integer numero, String complemento) {
+    public EnderecoEmbeddable(String cep, Integer numero, String complemento) {
         this.cep = cep;
         this.numero = numero;
         this.complemento = complemento;
