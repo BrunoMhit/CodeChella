@@ -1,6 +1,5 @@
 package br.com.alura.codechella.domain.evento;
 
-import br.com.alura.codechella.domain.evento.Categoria;
 import br.com.alura.codechella.domain.ingresso.TipoIngresso;
 
 import java.time.LocalDateTime;
@@ -35,6 +34,10 @@ public class Evento {
 
     public void aumentaNumeroDeIngressoPorTipo(){
         //implementar aqui, uma classe não poded só ter get e set, regra de negócio vai aqui
+    }
+
+    public UUID getUuid(){
+        return uuid;
     }
 
     public Categoria getCategoria() {

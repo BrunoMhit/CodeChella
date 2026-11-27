@@ -10,11 +10,11 @@ public class Endereco {
 
     public Endereco() {}
 
-//    public Endereco(DadosEndereco dados) {
-//        this.cep = dados.cep();
-//        this.numero = dados.numero();
-//        this.complemento = dados.complemento();
-//    }
+    public Endereco(String cep, Integer numero, String complemento) {
+        this.cep = cep;
+        this.numero = numero;
+        this.complemento = complemento;
+    }
 
     public String getCep() {
         return cep;
